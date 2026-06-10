@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game 💖</title>
+
+<style>
+body{
+  height:100vh;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  background:#fff0f5;
+  overflow:hidden;
+}
+
+button{
+  padding:15px;
+  border:none;
+  border-radius:20px;
+  margin:10px;
+}
+
+#no{
+  position:absolute;
+}
+
+.glow{
+  color:#ff4d6d;
+  text-shadow:0 0 10px #ff4d6d;
+}
+
+.heart{
+  position:absolute;
+  animation:float 4s linear forwards;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h2 id="q" class="glow"></h2>
+
+<button style="background:#ff4d6d;color:white" onclick="yes()">Yes ❤️</button>
+<button id="no">No 💔</button>
+
+<script>
+let name = localStorage.getItem("name");
+document.getElementById("q").innerText =
+`Do you love me thangam, ${name}? 😏`;
+
+/* runaway NO */
+document.addEventListener("mousemove",()=>{
+  let no=document.getElementById("no");
+  no.style.left=Math.random()*window.innerWidth+"px";
+  no.style.top=Math.random()*window.innerHeight+"px";
+});
+
+/* hearts */
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*window.innerWidth+"px";
+  h.style.top=window.innerHeight+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+},300);
+
+function yes(){
+  window.location.href="game2.html";
+}
+</script>
+
+</body>
+</html>
