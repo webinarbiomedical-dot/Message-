@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Final 💖</title>
+
+<style>
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.glow{
+  text-shadow:0 0 10px #ff4d6d;
+}
+
+.float{
+  animation:updown 3s ease-in-out infinite;
+}
+
+@keyframes updown{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="float">
+
+<h2 class="glow">Thathi 11th yanna okay kiwwa amma 💖</h2>
+
+<p>
+adarei ammi godaaak,<br>
+mata kammali ane ada meka hadagena hitiya<br><br>
+
+ummmmmmmmmmmaaaaaaaaaaaa 💖
+</p>
+
+</div>
+
+<script>
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.innerHTML="💖";
+  h.style.position="absolute";
+  h.style.left=Math.random()*window.innerWidth+"px";
+  h.style.top=window.innerHeight+"px";
+  h.style.fontSize="20px";
+  h.style.animation="float 4s linear forwards";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+},400);
+</script>
+
+</body>
+</html>
